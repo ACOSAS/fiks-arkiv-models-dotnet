@@ -160,9 +160,15 @@ var generator = new Generator
     }
 };
 var schemaFolder = new DirectoryInfo(args[0]);
+var runtimeFolder = Directory.GetCurrentDirectory();
+Console.WriteLine("Schema folder: {0}", schemaFolder);
+Console.WriteLine("Current directory: {0}", runtimeFolder);
 var schemasToGenerate = schemaFolder
     .GetFiles()
     .Where(file => file.Extension.Equals(".xsd"))
     .Select(file => Path.Combine(args[0], file.Name));
-
+foreach(var schema in schemasToGenerate)
+{
+    Console.WriteLine("Schema: {0}", schema);
+}
 generator.Generate(schemasToGenerate);

@@ -1,43 +1,67 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <Title>KS.Fiks.Arkiv.Models.V1</Title>
-        <Authors>KS - Kommunesektorens Organisasjon</Authors>
-        <Company>KS - Kommunesektorens Organisasjon</Company>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <PackageIcon>KS.png</PackageIcon>
-        <RepositoryUrl>https://github.com/ks-no/fiks-arkiv-models-dotnet</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
-        <PackageTags>FIKS</PackageTags>
-        <IncludeSymbols>true</IncludeSymbols>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <VersionPrefix>0.9.4</VersionPrefix>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>KS.Fiks.Arkiv.Models.V1</PackageId>
-        <Description>C# klasser som følger XSD-skjema spesifisert i https://github.com/ks-no/fiks-arkiv-specification.</Description>
-        <PackageProjectUrl>https://github.com/ks-no/fiks-arkiv-models-dotnet</PackageProjectUrl>
-        <AssemblyName>KS.Fiks.Arkiv.Models.V1</AssemblyName>
-        <RootNamespace>KS.Fiks.Arkiv.Models.V1</RootNamespace>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <SignAssembly>true</SignAssembly>
-        <AssemblyOriginatorKeyFile>fiks-io-strongly-named-key.snk</AssemblyOriginatorKeyFile>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Title>KS.Fiks.Arkiv.Models.V1</Title>
+    <Authors>KS - Kommunesektorens Organisasjon</Authors>
+    <Company>KS - Kommunesektorens Organisasjon</Company>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>KS.png</PackageIcon>
+    <RepositoryUrl>https://github.com/ks-no/fiks-arkiv-models-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>FIKS</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <VersionPrefix>0.9.4</VersionPrefix>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>KS.Fiks.Arkiv.Models.V1</PackageId>
+    <Description>C# klasser som følger XSD-skjema spesifisert i https://github.com/ks-no/fiks-arkiv-specification.</Description>
+    <PackageProjectUrl>https://github.com/ks-no/fiks-arkiv-models-dotnet</PackageProjectUrl>
+    <AssemblyName>KS.Fiks.Arkiv.Models.V1</AssemblyName>
+    <RootNamespace>KS.Fiks.Arkiv.Models.V1</RootNamespace>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>fiks-io-strongly-named-key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <EmbeddedResource Include="Schema/V1/*.xsd" />
-        <EmbeddedResource Include="Schema/V1/meldingstyper/meldingstyper.json" />
-        <None Include="KS.png">
-            <Pack>true</Pack>
-            <PackagePath>/</PackagePath>
-        </None>
-        <None Include="LICENSE" Pack="true" PackagePath="" />
-        <None Include="README.md" Pack="true" PackagePath="" />
-        <None Include="fiks-io-strongly-named-key.snk">
-            <Link>fiks-io-strongly-named-key.snk</Link>
-        </None>
-    </ItemGroup>
+  <ItemGroup>
+    <!--<EmbeddedResource Include="Schema/V1/*.xsd" />
+    <Compile Remove="Schema\**" />
+    <EmbeddedResource Remove="Schema\**" />
+    <None Remove="Schema\**" />-->
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\meldingstyper\meldingstyper.json" Link="Schema/V1/meldingstyper/meldingstyper.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\arkivstruktur.xsd" Link="Schema/V1/arkivstruktur.xsd" CopyToOutputDirectory="PreserveNewest"/>
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\arkivstrukturMinimum.xsd" Link="Schema/V1/arkivstrukturMinimum.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\arkivstrukturNoekler.xsd" Link="Schema/V1/arkivstrukturNoekler.xsd" CopyToOutputDirectory="PreserveNewest"/>
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\feilmeldingBase.xsd" Link="Schema/V1/feilmeldingBase.xsd" CopyToOutputDirectory="PreserveNewest"/>
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\metadatakatalog.xsd" Link="Schema/V1/metadatakatalog.xsd" CopyToOutputDirectory="PreserveNewest"/>
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.arkivering.arkivmelding.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.arkivering.arkivmelding.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.feilmelding.serverfeil.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.feilmelding.serverfeil.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.feilmelding.ugyldigforespoersel.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.feilmelding.ugyldigforespoersel.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.mappe.hent.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.mappe.hent.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.registrering.hent.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.registrering.hent.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\fiks-arkiv-specification\Schema\V1\no.ks.fiks.arkiv.v1.innsyn.sok.xsd" Link="Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.xsd" CopyToOutputDirectory="PreserveNewest" />
+    <EmbeddedResource Include="Schema/V1/*.xsd" />
+    <None Include="KS.png">
+      <Pack>true</Pack>
+      <PackagePath>/</PackagePath>
+    </None>
+    <None Include="LICENSE" Pack="true" PackagePath="" />
+    <None Include="README.md" Pack="true" PackagePath="" />
+    <None Include="fiks-io-strongly-named-key.snk">
+      <Link>fiks-io-strongly-named-key.snk</Link>
+    </None>
+  </ItemGroup>
 </Project>
