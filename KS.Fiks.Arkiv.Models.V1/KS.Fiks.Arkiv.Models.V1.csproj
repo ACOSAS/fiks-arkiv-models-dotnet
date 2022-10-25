@@ -1,27 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Title>KS.Fiks.Arkiv.Models.V1</Title>
-    <Authors>KS - Kommunesektorens Organisasjon</Authors>
-    <Company>KS - Kommunesektorens Organisasjon</Company>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageIcon>KS.png</PackageIcon>
-    <RepositoryUrl>https://github.com/ks-no/fiks-arkiv-models-dotnet</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>FIKS</PackageTags>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <VersionPrefix>0.9.4</VersionPrefix>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>KS.Fiks.Arkiv.Models.V1</PackageId>
-    <Description>C# klasser som følger XSD-skjema spesifisert i https://github.com/ks-no/fiks-arkiv-specification.</Description>
-    <PackageProjectUrl>https://github.com/ks-no/fiks-arkiv-models-dotnet</PackageProjectUrl>
-    <AssemblyName>KS.Fiks.Arkiv.Models.V1</AssemblyName>
-    <RootNamespace>KS.Fiks.Arkiv.Models.V1</RootNamespace>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>fiks-io-strongly-named-key.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Title>KS.Fiks.Arkiv.Models.V1</Title>
+        <Authors>KS - Kommunesektorens Organisasjon</Authors>
+        <Company>KS - Kommunesektorens Organisasjon</Company>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageIcon>KS.png</PackageIcon>
+        <RepositoryUrl>https://github.com/ks-no/fiks-arkiv-models-dotnet</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>FIKS</PackageTags>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <VersionPrefix>0.9.5</VersionPrefix>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>KS.Fiks.Arkiv.Models.V1</PackageId>
+        <Description>C# klasser som følger XSD-skjema spesifisert i https://github.com/ks-no/fiks-arkiv-specification.</Description>
+        <PackageProjectUrl>https://github.com/ks-no/fiks-arkiv-models-dotnet</PackageProjectUrl>
+        <AssemblyName>KS.Fiks.Arkiv.Models.V1</AssemblyName>
+        <RootNamespace>KS.Fiks.Arkiv.Models.V1</RootNamespace>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>fiks-io-strongly-named-key.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
